@@ -2,14 +2,15 @@
 #include <iostream>
 #include <string>
 
-void Line::add(const std::string& line ) {
-    std::cout << "line is set to: " << line << std::endl;
-    current.push_back(line);
+void doSomethingWithNotebook(const std::string& line, char **env __attribute__((unused))) {
+    std::cout << "line set to " << line << std::endl;
 }
 
-void Line::getline(const std::string& line) {
-    std::string notebook;
-    std::cout << line;
-    std::getline(std::cin, notebook);
-    std::cout << notebook << std::endl;
+void Line::getline(char **env) {
+    while (1) {     
+        std::cout << "$> ";
+        std::string notebook;
+        std::getline(std::cin, notebook);
+        doSomethingWithNotebook(notebook, env);
+    };
 }

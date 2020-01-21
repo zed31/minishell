@@ -1,7 +1,8 @@
 NAME = minishell
 
 SRC = src/main.cpp \
-	src/Line.cpp
+	src/Line.cpp \
+	src/Runable.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

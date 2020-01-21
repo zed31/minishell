@@ -6,9 +6,8 @@
 
 class Line {
 public:
-    void getline(const std::string& line);
+    void getline(char **env);
 private:
-    void add(const std::string& line);
 private:
     std::vector<std::string> current;
 };
