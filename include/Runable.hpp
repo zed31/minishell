@@ -5,10 +5,11 @@
 
 class Runable {
     public:
-        Runable(const std::function<std::string(std::string)>& run);
-        std::string run(const std::string& param);
+        Runable();
+        Runable(const std::function<std::string(const std::string&, char **)>& run);
+        std::string run(const std::string& param, char **env);
     private:
-        std::function<std::string(std::string)> function;
+        std::function<std::string(const std::string&, char **)> function;
         
 };
 

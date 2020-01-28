@@ -2,8 +2,9 @@
 #include <iostream>
 #include <string>
 
-void doSomethingWithNotebook(const std::string& line, char **env __attribute__((unused))) {
-    std::cout << "line set to " << line << std::endl;
+void Line::doSomethingWithNotebook(const std::string& line, char **env) {
+    Runable run{ [&](const std::string& param, char** env) -> std::string { std::cout << env[0] << param << std::endl; return ""; } };
+    run.run(env[0], env);
 }
 
 void Line::getline(char **env) {
